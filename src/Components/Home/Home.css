@@ -39,3 +39,6 @@
   width: 200px;
   margin: auto;
 }
+#mainSection {
+  margin-top: 100px !important;
+}

@@ -6,7 +6,7 @@ import "./MainMenu.css";
 const MainMenu = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="light" expand="lg" fixed="top">
       <div className="container">
         <Navbar.Brand as={Link} to="/">
           Dreaming Store

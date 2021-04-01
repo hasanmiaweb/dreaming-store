@@ -1,13 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
-
+import { FaShoppingCart } from 'react-icons/fa';
+import { RiDeleteBin5Fill, RiEditBoxFill } from 'react-icons/ri';
+import loading from "../../loading/laading.gif";
 const ManageProduct = () => {
+  const [productData, setProductData] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:5000/getProductServer")
+      .then((response) => response.json())
+      .then((data) => setProductData(data));
+  }, []);
+
+  const handleDelete = (id) => {
+    fetch(`http://localhost:5000/deleteProduct/${id}`, {
+      method: "DELETE",
+    }).then(() => {
+      fetch("http://localhost:5000/getProductServer")
+        .then((response) => response.json())
+        .then((data) => setProductData(data));
+    });
+  };
+
   return (
     <div className="UpdatedInfo">
       <div className="container">
         <div className="row">
           <div className="col-md-5 m-auto">
-            <br />
             <div className="titles">
               <h3>Manage Product</h3>
             </div>
@@ -17,48 +35,42 @@ const ManageProduct = () => {
         <div className="row">
           <div className="col-md-4 ">
             <div className="box">
-              <div className="pandingProduct">
-                <h4>50</h4>
-                <h3>Pending Product</h3>
-              </div>
             </div>
           </div>
           <div className="col-md-4">
             <div className="totalProduct">
-              <h4>950</h4>
-              <h3>Total Product</h3>
-            </div>
-          </div>
-          <div className="col-md-4">
-            <div className="completeOrder">
-              <h4>500</h4>
-              <h3>Complete Order</h3>
+              <h4><FaShoppingCart></FaShoppingCart> </h4>
+              <h3>Total Product ({productData.length})</h3>
             </div>
           </div>
         </div>
 
         <div className="row">
-          <div className="col-md-12 mt-5">
-            <Table striped bordered hover>
+          <div className="col-md-10 m-auto mt-5">
+            {productData.length === 0 && (
+              <div className="loadingimg">
+                <img src={loading} alt="" />
+              </div>
+            )}
+            <Table striped bordered hover size="sm">
               <thead>
                 <tr>
                   <th>Product Name</th>
                   <th>Price</th>
-                  <th>Acton</th>
+                  <th>Action</th>
                 </tr>
+                {productData.map((producttest) => (
+                <tr>
+                  <td>{producttest.name}</td>
+                  <td>{producttest.price}</td>
+                  <button className="Edit"><RiEditBoxFill></RiEditBoxFill> Edit</button>
+                  <button className="EditDelete" onClick={() => handleDelete(producttest._id)}>
+                    <RiDeleteBin5Fill></RiDeleteBin5Fill> Delete
+                  </button>
+                </tr>
+              ))}
               </thead>
-              <tbody>
-                <tr>
-                  <td>Mark</td>
-                  <td>$650</td>
-                  <td>@55</td>
-                </tr>
-                <tr>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                </tr>
-              </tbody>
+
             </Table>
           </div>
         </div>

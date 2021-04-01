@@ -15,7 +15,7 @@ const Home = () => {
     <div className="mt-5">
       <div className="container">
         <div className="row">
-          <div className="col-md-5 m-auto">
+          <div className="col-md-5 m-auto" id="mainSection">
             <div className="searchBtns">
               <div className="searchIcon">
                 <FaSearch />
