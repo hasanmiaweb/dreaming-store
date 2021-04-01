@@ -1,0 +1,70 @@
+.sidebar {
+  position: fixed;
+  background: #ffc107;
+  height: 90vh;
+  width: 20%;
+  float: left;
+  box-shadow: 0px 0px 8px -4px black;
+}
+
+.sidebar ul li {
+  padding: 8px;
+
+  margin-top: 1px;
+}
+.sidebar ul li:hover {
+  background: #efbd28;
+}
+.sidebar ul {
+  list-style: none;
+  padding-left: 0;
+}
+.sidebarIcons {
+  font-size: 20px;
+  width: 25px;
+  float: left;
+}
+.sidebarIcons {
+  font-size: 20px;
+  width: 25px;
+  float: left;
+  padding-right: 36px;
+  margin-top: -5px;
+  color: #54514e;
+}
+.sidebar ul a {
+  text-decoration: none;
+  color: #54514e;
+}
+.sidebar ul a:hover {
+  color: aliceblue;
+}
+.pandingProduct {
+  padding: 10px;
+
+  background: #dc3545 !important;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+}
+.totalProduct {
+  background: #3da5f4 !important;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+}
+.UpdatedInfo {
+  width: 80%;
+  float: right;
+}
+.completeOrder {
+  background: #28a745 !important;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  padding: 10px;
+}
+.titles {
+  text-align: center;
+}

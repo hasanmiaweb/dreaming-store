@@ -1,0 +1,8 @@
+.card {
+  box-shadow: 0px 0px 6px -4px;
+  border: none;
+}
+.ProductCard {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
