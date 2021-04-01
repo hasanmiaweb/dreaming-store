@@ -6,7 +6,6 @@ const Checkout = () => {
   const { name } = useParams();
   const [product, setProduct] = useState([]);
   const result = product.find((product) => product.name === name);
-  console.log(result);
   useEffect(() => {
     fetch("http://localhost:5000/getProductServer")
     .then(res => res.json())

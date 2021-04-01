@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
-
+import './AddProduct.css';
 const AddProduct = () => {
   const [AddProductValues, setAddProductValues] = useState({
     name: "",
@@ -47,7 +47,9 @@ const AddProduct = () => {
   return (
     <div className="UpdatedInfo">
       <div className="container">
-        <h1>ADD PRODUCT</h1>
+      <div className="titles">
+        <h3>Add Product</h3>
+        </div>
         <hr />
 
 <Form onSubmit={handleAddProductBtn} action="" method="" >

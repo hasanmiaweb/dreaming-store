@@ -1,6 +1,6 @@
 .sidebar {
-  position: fixed;
-  background: #ffc107;
+  position: absolute;
+  background: #3da5f4;
   height: 90vh;
   width: 20%;
   float: left;
@@ -8,9 +8,8 @@
 }
 
 .sidebar ul li {
-  padding: 8px;
-
-  margin-top: 1px;
+  padding: 19px;
+  color: white;
 }
 .sidebar ul li:hover {
   background: #efbd28;
@@ -30,7 +29,7 @@
   float: left;
   padding-right: 36px;
   margin-top: -5px;
-  color: #54514e;
+  color: #f5f5f5;
 }
 .sidebar ul a {
   text-decoration: none;

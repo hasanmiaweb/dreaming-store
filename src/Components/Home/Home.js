@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { FaSearch } from "react-icons/fa";
+import loading from "../loading/laading.gif";
 import HomeProduct from "../ShowProduct/HomeProduct";
 import "./Home.css";
 const Home = () => {
@@ -35,7 +36,13 @@ const Home = () => {
       </div>
       <div className="container">
         <div className="row">
-            {productData.map((ProductDetails) => (
+          {productData.length === 0 && (
+            <div className="loadingimg">
+              <img src={loading} alt="" />
+            </div>
+            
+          )}
+          {productData.map((ProductDetails) => (
             <HomeProduct ProductDetails={ProductDetails}></HomeProduct>
           ))}
         </div>

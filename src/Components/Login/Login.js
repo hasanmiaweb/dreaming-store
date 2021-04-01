@@ -3,6 +3,7 @@ import "firebase/auth";
 import "firebase/firestore";
 import React, { useContext } from "react";
 import { Button, Form } from "react-bootstrap";
+import { FcGoogle } from 'react-icons/fc';
 import { Link, useHistory, useLocation } from "react-router-dom";
 import { UserContext } from "../../App";
 import firebaseConfig from "./Firebase";
@@ -73,14 +74,15 @@ const Login = () => {
               <div className="dontaccount">
                 <span>Dont't have an account?</span>{" "}
                 <Link to="/registration">Create an account</Link>
+                <br />
+                <Button onClick={googleSignIn} variant="warning">
+                <FcGoogle></FcGoogle>  GOOGLE
+                </Button>{" "}
               </div>
             </Form>
             <br />
           </div>
         </div>
-        <Button onClick={googleSignIn} variant="warning">
-          GOOGLE
-        </Button>{" "}
       </div>
     </div>
   );

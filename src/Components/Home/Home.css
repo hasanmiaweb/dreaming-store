@@ -35,3 +35,7 @@
   left: 35px;
   z-index: 83;
 }
+.loadingimg {
+  width: 200px;
+  margin: auto;
+}
