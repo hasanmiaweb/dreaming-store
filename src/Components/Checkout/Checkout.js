@@ -7,7 +7,7 @@ const Checkout = () => {
   const [product, setProduct] = useState([]);
   const result = product.find((product) => product.name === name);
   useEffect(() => {
-    fetch("http://localhost:5000/getProductServer")
+    fetch("https://rhubarb-tart-38441.herokuapp.com/getProductServer")
     .then(res => res.json())
     .then(data => setProduct(data))
   }, []);

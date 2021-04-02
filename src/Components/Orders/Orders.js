@@ -2,9 +2,8 @@ import React from "react";
 
 const Orders = () => {
   return (
-    <div>
+    <div className="container">
       <h1>This is order Page</h1>
-      <h1>This is order Page </h1>
     </div>
   );
 };

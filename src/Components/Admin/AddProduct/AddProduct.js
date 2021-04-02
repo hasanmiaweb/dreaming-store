@@ -12,7 +12,8 @@ const AddProduct = () => {
   const handleAddProductBtn = (e) => {
     const addProductData = { ...AddProductValues };
     addProductData.imageUrl = image;
-    fetch("http://localhost:5000/addProductServer", {
+    const apiUrl ="https://rhubarb-tart-38441.herokuapp.com/addProductServer"
+    fetch(apiUrl, {
       method: "POST",
       headers: {
         "content-type": "application/json",

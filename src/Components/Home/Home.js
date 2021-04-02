@@ -7,7 +7,7 @@ import "./Home.css";
 const Home = () => {
   const [productData, setProductData] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/getProductServer")
+    fetch("https://rhubarb-tart-38441.herokuapp.com/getProductServer")
       .then((response) => response.json())
       .then((data) => setProductData(data));
   }, []);

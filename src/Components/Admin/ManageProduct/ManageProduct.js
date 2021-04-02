@@ -6,16 +6,16 @@ import loading from "../../loading/laading.gif";
 const ManageProduct = () => {
   const [productData, setProductData] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/getProductServer")
+    fetch("https://rhubarb-tart-38441.herokuapp.com/getProductServer")
       .then((response) => response.json())
       .then((data) => setProductData(data));
   }, []);
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/deleteProduct/${id}`, {
+    fetch(`https://rhubarb-tart-38441.herokuapp.com/deleteProduct/${id}`, {
       method: "DELETE",
     }).then(() => {
-      fetch("http://localhost:5000/getProductServer")
+      fetch("https://rhubarb-tart-38441.herokuapp.com/getProductServer")
         .then((response) => response.json())
         .then((data) => setProductData(data));
     });
@@ -59,12 +59,12 @@ const ManageProduct = () => {
                   <th>Price</th>
                   <th>Action</th>
                 </tr>
-                {productData.map((producttest) => (
+                {productData.map((productData) => (
                 <tr>
-                  <td>{producttest.name}</td>
-                  <td>{producttest.price}</td>
+                  <td>{productData.name}</td>
+                  <td>{productData.price}</td>
                   <button className="Edit"><RiEditBoxFill></RiEditBoxFill> Edit</button>
-                  <button className="EditDelete" onClick={() => handleDelete(producttest._id)}>
+                  <button className="EditDelete" onClick={() => handleDelete(productData._id)}>
                     <RiDeleteBin5Fill></RiDeleteBin5Fill> Delete
                   </button>
                 </tr>
