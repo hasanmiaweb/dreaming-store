@@ -70,7 +70,6 @@ const ManageProduct = () => {
                 </tr>
               ))}
               </thead>
-
             </Table>
           </div>
         </div>
